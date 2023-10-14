@@ -7,7 +7,7 @@ import { ConvexClientProvider } from "@/components/providers/convex-provider";
 const mont = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Xplosion",
+  title: "Xplotion",
   description: "Notion clone where I don't have to pay",
   icons: {
     icon: [
@@ -39,7 +39,7 @@ export default function RootLayout({
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-            storageKey="xplosion-theme-2"
+            storageKey="xplotion-theme-2"
           >
             {children}
           </ThemeProvider>

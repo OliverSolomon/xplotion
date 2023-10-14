@@ -35,7 +35,7 @@ export const Heading = () => {
       {!isAuthenticated && !isLoading &&(
         <SignInButton mode="modal">
           <Button>
-            Get Xplosion Free
+            Get Xplotion Free
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
         </SignInButton>
