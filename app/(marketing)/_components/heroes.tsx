@@ -1,7 +1,10 @@
 "use client";
 import Image from "next/image";
+import { useConvexAuth } from "convex/react";
 
 export const Heroes = () => {
+
+  const {isAuthenticated, isLoading} = useConvexAuth();
   return (
     <div className="flex flex-col items-center justify-center max-w-5xl">
       <div className="flex items-center">
