@@ -10,7 +10,7 @@ export const get = query({
     }
 
     const userId = identity.subject;
-    const documents = await ctx.db.query("documents").collect()
+    const documents = await ctx.db.query("documents").collect();
 
     return documents;
   },
