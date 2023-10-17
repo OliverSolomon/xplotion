@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils";
-import { ChevronsLeft, MenuIcon, PlusCircle, Search, Settings } from "lucide-react"
+import { ChevronsLeft, MenuIcon, Plus, PlusCircle, Search, Settings } from "lucide-react"
 import { usePathname } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
@@ -126,6 +126,7 @@ export function Navigation() {
              </div>
              <div className="mt-4">
                 <DocumentList/>
+                <Item onClick={handleCreate} label="Add a page" icon={Plus}/>
              </div>
              <div 
              onMouseDown = {handleMouseDown}
