@@ -120,7 +120,7 @@ export function Navigation() {
             </div>
              <div>
                 <UserItem/>
-                <Item isSearch onClick={handleCreate} label="Search" icon={Search}/>
+                <Item isSearch onClick={() => {}} label="Search" icon={Search}/>
                 <Item onClick={() => {}} label="Settings" icon={Settings}/>
                 <Item onClick={handleCreate} label="New Page" icon={PlusCircle}/>
              </div>
