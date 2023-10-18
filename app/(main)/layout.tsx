@@ -4,6 +4,7 @@ import { useConvexAuth } from "convex/react"
 import {Spinner} from "@/components/spinner"
 import { redirect } from "next/navigation"
 import { Navigation } from "./_components/navigation"
+import {SearchCommand} from "@/components/search-command"
 
 
 export default function MainLayout({children}: {children: React.ReactNode}) {
@@ -27,6 +28,7 @@ export default function MainLayout({children}: {children: React.ReactNode}) {
         <div className="h-full flex dark:bg-[#1f1f1f]">
             <Navigation />
             <main className="flex-1 h-full overflow-auto">
+                <SearchCommand/>
                 {children}
             </main>
         </div>
