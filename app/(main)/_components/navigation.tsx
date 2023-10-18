@@ -14,9 +14,11 @@ import {DocumentList} from "./document-list";
 import {Popover, PopoverTrigger, PopoverContent} from "@/components/ui/popover"
 import TrashBox from "./trash-box";
 import {useSearch} from "@/hooks/use-search"
+import { useSettings } from "@/hooks/use-settings";
 
 export function Navigation() {
     const search = useSearch()
+    const settings= useSettings()
     const pathname = usePathname()
     const isMobile = useMediaQuery(("max-width: 768px"))
     const create = useMutation(api.documents.create)
@@ -125,14 +127,14 @@ export function Navigation() {
              <div>
                 <UserItem/>
                 <Item isSearch onClick={search.onOpen} label="Search" icon={Search}/>
-                <Item onClick={() => {}} label="Settings" icon={Settings}/>
+                <Item onClick={settings.onOpen} label="Settings" icon={Settings}/>
                 <Item onClick={handleCreate} label="New Page" icon={PlusCircle}/>
              </div>
              <div className="mt-4">
                 <DocumentList/>
                 <Item onClick={handleCreate} label="Add a page" icon={Plus}/>
                 <Popover>
-                    <PopoverTrigger className="w-full mt-4">
+                    <PopoverTrigger className="w-full mt-4"> 
                         <Item onClick={() => {}} label="Trash" icon={Trash}/>
                     </PopoverTrigger>
                     <PopoverContent side={isMobile? "bottom" : "right"} className="p-0 w-72" >

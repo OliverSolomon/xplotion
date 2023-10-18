@@ -4,6 +4,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
+import { ModalProvider } from "@/components/providers/modal-providers";
 
 const mont = Montserrat({ subsets: ["latin"] });
 
@@ -43,6 +44,7 @@ export default function RootLayout({
             storageKey="xplotion-theme-2"
           >
             <Toaster position="bottom-center"/>
+            <ModalProvider/>
             {children}
           </ThemeProvider>
         </ConvexClientProvider>
