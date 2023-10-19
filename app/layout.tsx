@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
 import { ModalProvider } from "@/components/providers/modal-providers";
+import { EdgeStoreProvider } from "@/lib/edgestore";
 
 const mont = Montserrat({ subsets: ["latin"] });
 
@@ -36,17 +37,19 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={mont.className}>
         <ConvexClientProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-            storageKey="xplotion-theme-2"
-          >
-            <Toaster position="bottom-center"/>
-            <ModalProvider/>
-            {children}
-          </ThemeProvider>
+          <EdgeStoreProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+              storageKey="xplotion-theme-2"
+            >
+              <Toaster position="bottom-center"/>
+              <ModalProvider/>
+              {children}
+            </ThemeProvider>
+          </EdgeStoreProvider>
         </ConvexClientProvider>
         </body>
     </html>
